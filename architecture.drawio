@@ -1,0 +1,34 @@
+<mxfile host="65bd71144e">
+    <diagram id="yG_0Tjeme5Otq10H8HWa" name="Page-1">
+        <mxGraphModel dx="1118" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Svelte frontend" style="html=1;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="300" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Redis server" style="html=1;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="300" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Express API" style="html=1;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="300" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Google analytics" style="html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="450" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="SEO" style="html=1;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="250" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Search engine" style="html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="500" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Blog" style="html=1;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="200" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Admin" style="html=1;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="370" width="110" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

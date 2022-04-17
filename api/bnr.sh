@@ -1,5 +1,5 @@
 #!/bin/bash
-# Shell script to recompile and run the api
+# Shell script to rebuild and run the api
 parentDir=${PWD##*/}
 
 rm -rf build

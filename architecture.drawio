@@ -4,29 +4,35 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="Svelte frontend" style="html=1;" vertex="1" parent="1">
-                    <mxGeometry x="510" y="300" width="110" height="50" as="geometry"/>
+                <mxCell id="2" value="Svelte frontend" style="html=1;" parent="1" vertex="1">
+                    <mxGeometry x="539" y="560" width="110" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="Redis server" style="html=1;" vertex="1" parent="1">
-                    <mxGeometry x="280" y="300" width="110" height="50" as="geometry"/>
+                <mxCell id="13" style="edgeStyle=none;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="8">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="Express API" style="html=1;" vertex="1" parent="1">
-                    <mxGeometry x="170" y="300" width="110" height="50" as="geometry"/>
+                <mxCell id="14" style="edgeStyle=none;html=1;" edge="1" parent="1" source="3" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="Google analytics" style="html=1;" vertex="1" parent="1">
-                    <mxGeometry x="270" y="450" width="110" height="50" as="geometry"/>
+                <mxCell id="3" value="Redis server" style="html=1;" parent="1" vertex="1">
+                    <mxGeometry x="289" y="560" width="110" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="SEO" style="html=1;" vertex="1" parent="1">
-                    <mxGeometry x="510" y="250" width="110" height="50" as="geometry"/>
+                <mxCell id="19" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="4" target="18">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="Search engine" style="html=1;" vertex="1" parent="1">
-                    <mxGeometry x="270" y="500" width="110" height="50" as="geometry"/>
+                <mxCell id="4" value="Drogon API" style="html=1;" parent="1" vertex="1">
+                    <mxGeometry x="179" y="560" width="110" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="Blog" style="html=1;" vertex="1" parent="1">
-                    <mxGeometry x="510" y="200" width="110" height="50" as="geometry"/>
+                <mxCell id="8" value="React Blog" style="html=1;" parent="1" vertex="1">
+                    <mxGeometry x="539" y="460" width="110" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="Admin" style="html=1;" vertex="1" parent="1">
-                    <mxGeometry x="510" y="370" width="110" height="50" as="geometry"/>
+                <mxCell id="17" style="edgeStyle=none;html=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="9" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="CMS" style="html=1;" parent="1" vertex="1">
+                    <mxGeometry x="179" y="670" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="MySQL Db" style="html=1;" vertex="1" parent="1">
+                    <mxGeometry x="179" y="430" width="110" height="50" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

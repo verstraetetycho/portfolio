@@ -1,37 +1,31 @@
 <mxfile host="65bd71144e">
     <diagram id="yG_0Tjeme5Otq10H8HWa" name="Page-1">
-        <mxGraphModel dx="1118" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1118" dy="491" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="Svelte frontend" style="html=1;" parent="1" vertex="1">
+                <mxCell id="2" value="astro &amp;amp; solidjs" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="539" y="560" width="110" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" style="edgeStyle=none;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="8">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="14" style="edgeStyle=none;html=1;" edge="1" parent="1" source="3" target="2">
+                <mxCell id="14" style="edgeStyle=none;html=1;" parent="1" source="3" target="2" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="Redis server" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="289" y="560" width="110" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="4" target="18">
+                <mxCell id="19" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="4" target="18" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="Drogon API" style="html=1;" parent="1" vertex="1">
+                <mxCell id="4" value="Fastify API" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="179" y="560" width="110" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="React Blog" style="html=1;" parent="1" vertex="1">
-                    <mxGeometry x="539" y="460" width="110" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="17" style="edgeStyle=none;html=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="9" target="4">
+                <mxCell id="17" style="edgeStyle=none;html=1;startArrow=classic;startFill=1;" parent="1" source="9" target="4" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="CMS" style="html=1;" parent="1" vertex="1">
+                <mxCell id="9" value="React CMS" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="179" y="670" width="110" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="MySQL Db" style="html=1;" vertex="1" parent="1">
+                <mxCell id="18" value="Posgres Db" style="html=1;" parent="1" vertex="1">
                     <mxGeometry x="179" y="430" width="110" height="50" as="geometry"/>
                 </mxCell>
             </root>

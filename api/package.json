@@ -1,0 +1,61 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "The api to my portfolio",
+  "scripts": {
+    "dev": "prisma migrate dev --name init && nodemon --config nodemon.json src/app.ts",
+    "dev:docker": "docker compose -f docker-compose.dev.yml up --build",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/app.js",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+  },
+  "author": "Tycho Verstraete",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.8.4",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.1.2",
+    "nodemon": "^2.0.20",
+    "pino-pretty": "^9.1.1",
+    "prettier": "^2.7.1",
+    "prisma": "^4.4.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.4.0",
+    "class-validator": "^0.13.2",
+    "fastify": "^4.8.1",
+    "fastify-healthcheck": "^4.2.0",
+    "fastify-plugin": "^4.2.1",
+    "graphql": "^16.6.0",
+    "mercurius": "^11.0.1",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}

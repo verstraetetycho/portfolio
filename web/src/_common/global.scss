@@ -1,0 +1,44 @@
+:root {
+  --light-grey: #f8fafc;
+  --light-blue: #1c99fe;
+  --blue: #7644ff;
+  --red: #fd4766;
+  --black: #1d1d24;
+  --dark: #1a191d;
+  --darker-grey: #e7e7e7;
+  --gradient: linear-gradient(
+    120deg,
+    var(--light-blue) 20.69%,
+    var(--blue) 50.19%,
+    var(--red) 79.69%
+  );
+}
+
+*:focus,
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Text';
+  color: var(--black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Title';
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 0rem;
+}

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Title';
+  src: url('./Poppins-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Text';
+  src: url('./Poppins-ExtraLight.ttf') format('truetype');
+}

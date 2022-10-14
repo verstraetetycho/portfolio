@@ -1,8 +1,8 @@
-import fastify from 'fastify'
-import healthCheck from 'fastify-healthcheck'
-import prismaPlugin from './plugins/prisma'
+import fastify from 'fastify';
+import healthCheck from 'fastify-healthcheck';
+import prismaPlugin from './plugins/prisma';
 
-const environment = process.env.NODE_ENV ?? 'development'
+const environment = process.env.NODE_ENV ?? 'development';
 
 const envToLogger: Record<string, unknown> = {
   development: {
@@ -16,18 +16,18 @@ const envToLogger: Record<string, unknown> = {
   },
   production: true,
   test: false,
-}
+};
 
-const app = fastify({ logger: envToLogger[environment] ?? true })
+const app = fastify({ logger: envToLogger[environment] ?? true });
 
-app.register(healthCheck)
-app.register(prismaPlugin)
+app.register(healthCheck);
+app.register(prismaPlugin);
 
 app.listen({ port: 3000, host: '0.0.0.0' }, (err, address) => {
   if (err) {
-    console.error(err.message)
-    process.exit(1)
+    console.error(err.message);
+    process.exit(1);
   }
 
-  console.log(`App listening at ${address}`)
-})
+  console.log(`App listening at ${address}`);
+});

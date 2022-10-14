@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The api to my portfolio",
   "scripts": {
-    "dev": "prisma migrate dev --name init && nodemon --config nodemon.json src/app.ts",
+    "dev": "prisma db push && nodemon --config nodemon.json src/app.ts",
     "dev:docker": "docker compose -f docker-compose.dev.yml up --build",
     "build": "tsc -p tsconfig.json",
     "start": "node dist/app.js",

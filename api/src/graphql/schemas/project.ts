@@ -1,23 +1,23 @@
-import 'reflect-metadata'
-import { Field, ID, ObjectType } from 'type-graphql'
+import 'reflect-metadata';
+import { Field, ID, ObjectType } from 'type-graphql';
 
 @ObjectType()
 export class Project {
   @Field(() => ID)
-  id: string
+  id: string;
 
   @Field(() => String)
-  title: string
+  title: string;
 
   @Field(() => String)
-  description: string
+  description: string;
 
   @Field(() => Date, { nullable: true })
-  date: Date | null
+  date: Date | null;
 
   @Field(() => String, { nullable: true })
-  previewUrl: string | null
+  previewUrl: string | null;
 
   @Field(() => String, { nullable: true })
-  codeUrl: string | null
+  codeUrl: string | null;
 }

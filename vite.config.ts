@@ -4,6 +4,12 @@ import adapter from '@hono/vite-dev-server/cloudflare';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: '/src/client.tsx',
+    },
+  },
+
   ssr: {
     external: ['react', 'react-dom'],
   },

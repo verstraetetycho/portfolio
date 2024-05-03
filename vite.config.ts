@@ -8,6 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: '/src/client.tsx',
     },
+    target: 'esnext',
   },
 
   ssr: {

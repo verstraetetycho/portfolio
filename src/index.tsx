@@ -2,7 +2,7 @@ import { Hono } from 'hono';
 import { reactRenderer } from '@hono/react-renderer';
 import { Home } from './modules/home';
 
-const isProd = process.env.NODE_ENV === 'production';
+const isProd = process.env.IS_PROD === 'true' ?? false;
 
 const manifestPath = '../dist/manifest.json';
 const cssFile = isProd

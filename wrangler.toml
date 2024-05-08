@@ -1,5 +1,5 @@
 name = "portfolio2-2"
 pages_build_output_dir = "./dist"
 
-# [vars]
+[vars]
 NODE_ENV = 'production'

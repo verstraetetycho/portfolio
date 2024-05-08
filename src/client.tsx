@@ -1,1 +1,6 @@
-import '../public/static/css/index.css';
+import { createRoot } from 'react-dom/client';
+import RouteSwitch from '@/modules/common/routeSwitch';
+
+const domNode = document.getElementById('root')!;
+const root = createRoot(domNode);
+root.render(<RouteSwitch />);

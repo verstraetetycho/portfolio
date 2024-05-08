@@ -1,5 +1,2 @@
 name = "portfolio2-2"
 pages_build_output_dir = "./dist"
-
-[vars]
-IS_PROD = 'true'

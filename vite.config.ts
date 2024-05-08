@@ -1,24 +1,42 @@
-import build from '@hono/vite-cloudflare-pages';
+import path from 'path';
+import pages from '@hono/vite-cloudflare-pages';
 import devServer from '@hono/vite-dev-server';
-import adapter from '@hono/vite-dev-server/cloudflare';
 import { defineConfig } from 'vite';
 
-export default defineConfig({
-  build: {
-    rollupOptions: {
-      input: '/src/client.tsx',
+export default defineConfig(({ mode }) => {
+  const globalConfig = {
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+      },
     },
-    target: 'esnext',
-  },
+  };
 
-  ssr: {
-    external: ['react', 'react-dom'],
-  },
-  plugins: [
-    build(),
-    devServer({
-      adapter,
-      entry: 'src/index.tsx',
-    }),
-  ],
+  if (mode === 'client') {
+    return {
+      ...globalConfig,
+      build: {
+        rollupOptions: {
+          input: ['./src/client.tsx', './src/style.css'],
+          output: {
+            entryFileNames: 'static/client.js',
+            assetFileNames: 'static/assets/[name].[ext]',
+          },
+        },
+      },
+    };
+  } else {
+    return {
+      ...globalConfig,
+      ssr: {
+        external: ['react', 'react-dom'],
+      },
+      plugins: [
+        pages(),
+        devServer({
+          entry: 'src/index.tsx',
+        }),
+      ],
+    };
+  }
 });

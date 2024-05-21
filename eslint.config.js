@@ -1,14 +1,14 @@
 import eslint from '@eslint/js';
-import reactPlugin from 'eslint-plugin-react';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import tseslint from 'typescript-eslint';
+import react from '@eslint-react/eslint-plugin';
 
 export default tseslint.config(
   {
     files: ['src/**/*.ts', 'src/**/*.tsx'],
     plugins: {
       'simple-import-sort': simpleImportSort,
-      react: reactPlugin
+      react
     },
     rules: {
       'simple-import-sort/imports': [

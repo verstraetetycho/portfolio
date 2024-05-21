@@ -1,14 +1,11 @@
-import tsParser from '@typescript-eslint/parser';
-import jsPlugin from '@eslint/js';
+import eslint from '@eslint/js';
 import reactPlugin from 'eslint-plugin-react';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import tseslint from 'typescript-eslint';
 
-export default [
+export default tseslint.config(
   {
     files: ['src/**/*.ts', 'src/**/*.tsx'],
-    languageOptions: {
-      parser: tsParser
-    },
     plugins: {
       'simple-import-sort': simpleImportSort,
       react: reactPlugin
@@ -35,5 +32,6 @@ export default [
       ]
     }
   },
-  jsPlugin.configs.recommended
-];
+  eslint.configs.recommended,
+  ...tseslint.configs.recommended
+);

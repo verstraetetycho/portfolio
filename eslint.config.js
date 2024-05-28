@@ -4,11 +4,12 @@ import tseslint from 'typescript-eslint';
 import react from '@eslint-react/eslint-plugin';
 
 export default tseslint.config(
+  eslint.configs.recommended,
+  ...tseslint.configs.recommended,
   {
     files: ['src/**/*.ts', 'src/**/*.tsx'],
     plugins: {
-      'simple-import-sort': simpleImportSort,
-      react
+      'simple-import-sort': simpleImportSort
     },
     rules: {
       'simple-import-sort/imports': [
@@ -17,6 +18,8 @@ export default tseslint.config(
           groups: [
             // Packages `react` related packages come first.
             ['^react', '^@?\\w'],
+            // Packages `hono` related packages come first.
+            ['^hono', '^@?\\w'],
             // Internal packages.
             ['^(@|components)(/.*|$)'],
             // Side effect imports.
@@ -32,6 +35,10 @@ export default tseslint.config(
       ]
     }
   },
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended
+  {
+    files: ['src/**/*.tsx'],
+    plugins: {
+      react
+    }
+  }
 );

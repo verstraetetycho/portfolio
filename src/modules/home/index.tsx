@@ -6,10 +6,8 @@ function Home() {
       </h1>
       <p>
         Please check out my{' '}
-        <a href='https://www.linkedin.com/in/tycho-verstraete-a5ab1b174'>
-          LinkedIn
-        </a>{' '}
-        for more info in the meantime.
+        <a href='https://www.linkedin.com/in/tycho-verstraete-a5ab1b174'>LinkedIn</a> for more info
+        in the meantime.
       </p>
     </>
   );

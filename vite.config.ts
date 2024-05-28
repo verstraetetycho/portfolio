@@ -8,9 +8,9 @@ export default defineConfig(({ mode }) => {
   const globalConfig = {
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './src'),
-      },
-    },
+        '@': path.resolve(__dirname, './src')
+      }
+    }
   };
 
   if (mode === 'client') {
@@ -20,24 +20,26 @@ export default defineConfig(({ mode }) => {
         rollupOptions: {
           input: ['./src/style.css'],
           output: {
-            assetFileNames: 'static/assets/[name].[ext]',
-          },
-        },
-      },
+            assetFileNames: 'static/assets/[name].[ext]'
+          }
+        }
+      }
     };
   } else {
     return {
       ...globalConfig,
       ssr: {
-        external: ['react', 'react-dom'],
+        external: ['react', 'react-dom']
       },
       plugins: [
-        build(),
+        build({
+          entry: 'src/index.ts'
+        }),
         devServer({
           adapter,
-          entry: 'src/index.tsx',
-        }),
-      ],
+          entry: 'src/index.ts'
+        })
+      ]
     };
   }
 });

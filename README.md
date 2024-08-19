@@ -11,3 +11,4 @@ For example:
 - I didn't know anything about Cloudflare workers or pages.
 - It's the first time I use bun properly as a runtime.
 - Hono was a whole new learning experience as well.
+- I was not experienced with Tailwind. I'm more of a styled-components kind of guy.

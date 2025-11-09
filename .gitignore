@@ -1,14 +1,13 @@
 node_modules
+.DS_Store
 dist
+dist-ssr
+*.local
+count.txt
+.env
+.nitro
+.tanstack
 .wrangler
-.dev.vars
-
-# Change them to your taste:
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-bun.lockb
-
-# env
-
-*.env
+.output
+.vinxi
+todos.json

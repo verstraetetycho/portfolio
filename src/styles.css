@@ -1,10 +1,103 @@
-@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400&display=swap");
 @import "tailwindcss";
 
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+}
+
 body {
-  font-family: "Urbanist", sans-serif;
+  margin: 0;
+  background: #0a0a0a;
+  color: #f2f2f2;
+  font-family: var(--font-mono);
+}
+
+a {
+  color: #f2f2f2;
+}
+a:hover {
+  color: #fff;
+}
+
+.dotgrid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1.3px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.6) 40%, transparent 75%);
+}
+
+/* Social buttons: fill wipes in from the left, icon wiggles, arrow launches off and re-enters. */
+.sl {
+  background: linear-gradient(#f2f2f2, #f2f2f2) no-repeat left / 0% 100%;
   transition:
-    background-color 0.3s,
-    color 0.3s;
-  color: var(--color-text);
+    background-size 0.35s cubic-bezier(0.7, 0, 0.2, 1),
+    color 0.2s ease 0.05s,
+    border-color 0.2s ease;
+}
+.sl:hover,
+.sl:focus-visible {
+  background-size: 100% 100%;
+  color: #0a0a0a;
+  border-color: #f2f2f2;
+  outline: none;
+}
+.sl:active {
+  transform: translateY(1px);
+}
+.sl:hover .sl-icon,
+.sl:focus-visible .sl-icon {
+  animation: wiggle 0.5s ease;
+}
+.sl:hover .sl-arrow,
+.sl:focus-visible .sl-arrow {
+  animation: launch 0.5s cubic-bezier(0.7, 0, 0.2, 1);
+}
+@keyframes wiggle {
+  25% {
+    transform: rotate(-12deg) scale(1.1);
+  }
+  60% {
+    transform: rotate(8deg) scale(1.1);
+  }
+}
+@keyframes launch {
+  45% {
+    transform: translate(10px, -10px);
+    opacity: 0;
+  }
+  46% {
+    transform: translate(-10px, 10px);
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1.05s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.spin {
+  animation: spin 40s linear infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blink,
+  .spin,
+  .sl-icon,
+  .sl-arrow {
+    animation: none !important;
+  }
+  .sl {
+    transition: none;
+  }
 }

@@ -1,7 +1,7 @@
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 import { Github, Linkedin } from "./-brand-icons";
 
-const LINKS = [
+export const LINKS = [
 	{
 		label: "LinkedIn",
 		href: "https://www.linkedin.com/in/tycho-verstraete-a5ab1b174/",

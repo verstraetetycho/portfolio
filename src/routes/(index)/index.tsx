@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Crosses } from "./-crosses";
+import { head } from "./-head";
 import { RIDGE_COUNT, Ridges } from "./-ridges";
 import { SocialLinks } from "./-social-links";
 
-export const Route = createFileRoute("/(index)/")({ component: App });
+export const Route = createFileRoute("/(index)/")({ head, component: App });
 
 const wrap = "mx-auto w-full max-w-[1280px] px-[clamp(20px,4vw,48px)]";
 const label = "text-[11px] uppercase tracking-[0.12em]";
@@ -56,6 +57,9 @@ function App() {
 								</svg>
 								<img
 									src="/tycho.png"
+									width={216}
+									height={216}
+									fetchPriority="high"
 									alt="Portrait of Tycho Verstraete"
 									className="absolute top-5.5 left-5.5 size-54 rounded-full object-cover grayscale contrast-[1.08]"
 								/>

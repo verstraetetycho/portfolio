@@ -9,38 +9,153 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as MyspaceRouteRouteImport } from './routes/myspace/route'
 import { Route as indexIndexRouteImport } from './routes/(index)/index'
+import { Route as MyspaceAuthedRouteRouteImport } from './routes/myspace/_authed/route'
+import { Route as MyspaceLoginRouteImport } from './routes/myspace/login'
+import { Route as MyspaceAuthedIndexRouteImport } from './routes/myspace/_authed/index'
+import { Route as MyspaceImagesKeyRouteImport } from './routes/myspace/images/$key'
+import { Route as MyspaceShareTokenRouteImport } from './routes/myspace/share/$token'
+import { Route as MyspaceAuthedWishlistsIndexRouteImport } from './routes/myspace/_authed/wishlists/index'
+import { Route as MyspaceAuthedWishlistsIdRouteImport } from './routes/myspace/_authed/wishlists/$id'
+import { Route as MyspaceApiAuthSplatRouteImport } from './routes/myspace/api/auth/$'
 
+const MyspaceRouteRoute = MyspaceRouteRouteImport.update({
+  id: '/myspace',
+  path: '/myspace',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const indexIndexRoute = indexIndexRouteImport.update({
   id: '/(index)/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MyspaceAuthedRouteRoute = MyspaceAuthedRouteRouteImport.update({
+  id: '/_authed',
+  getParentRoute: () => MyspaceRouteRoute,
+} as any)
+const MyspaceLoginRoute = MyspaceLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => MyspaceRouteRoute,
+} as any)
+const MyspaceAuthedIndexRoute = MyspaceAuthedIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MyspaceAuthedRouteRoute,
+} as any)
+const MyspaceImagesKeyRoute = MyspaceImagesKeyRouteImport.update({
+  id: '/images/$key',
+  path: '/images/$key',
+  getParentRoute: () => MyspaceRouteRoute,
+} as any)
+const MyspaceShareTokenRoute = MyspaceShareTokenRouteImport.update({
+  id: '/share/$token',
+  path: '/share/$token',
+  getParentRoute: () => MyspaceRouteRoute,
+} as any)
+const MyspaceAuthedWishlistsIndexRoute =
+  MyspaceAuthedWishlistsIndexRouteImport.update({
+    id: '/wishlists/',
+    path: '/wishlists/',
+    getParentRoute: () => MyspaceAuthedRouteRoute,
+  } as any)
+const MyspaceAuthedWishlistsIdRoute =
+  MyspaceAuthedWishlistsIdRouteImport.update({
+    id: '/wishlists/$id',
+    path: '/wishlists/$id',
+    getParentRoute: () => MyspaceAuthedRouteRoute,
+  } as any)
+const MyspaceApiAuthSplatRoute = MyspaceApiAuthSplatRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
+  getParentRoute: () => MyspaceRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
+  '/myspace': typeof MyspaceRouteRouteWithChildren
+  '/myspace/login': typeof MyspaceLoginRoute
   '/': typeof indexIndexRoute
+  '/myspace/images/$key': typeof MyspaceImagesKeyRoute
+  '/myspace/share/$token': typeof MyspaceShareTokenRoute
+  '/myspace/': typeof MyspaceAuthedIndexRoute
+  '/myspace/wishlists/$id': typeof MyspaceAuthedWishlistsIdRoute
+  '/myspace/api/auth/$': typeof MyspaceApiAuthSplatRoute
+  '/myspace/wishlists/': typeof MyspaceAuthedWishlistsIndexRoute
 }
 export interface FileRoutesByTo {
+  '/myspace': typeof MyspaceAuthedIndexRoute
+  '/myspace/login': typeof MyspaceLoginRoute
   '/': typeof indexIndexRoute
+  '/myspace/images/$key': typeof MyspaceImagesKeyRoute
+  '/myspace/share/$token': typeof MyspaceShareTokenRoute
+  '/myspace/wishlists/$id': typeof MyspaceAuthedWishlistsIdRoute
+  '/myspace/api/auth/$': typeof MyspaceApiAuthSplatRoute
+  '/myspace/wishlists': typeof MyspaceAuthedWishlistsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/myspace': typeof MyspaceRouteRouteWithChildren
+  '/myspace/_authed': typeof MyspaceAuthedRouteRouteWithChildren
+  '/myspace/login': typeof MyspaceLoginRoute
   '/(index)/': typeof indexIndexRoute
+  '/myspace/images/$key': typeof MyspaceImagesKeyRoute
+  '/myspace/share/$token': typeof MyspaceShareTokenRoute
+  '/myspace/_authed/': typeof MyspaceAuthedIndexRoute
+  '/myspace/_authed/wishlists/$id': typeof MyspaceAuthedWishlistsIdRoute
+  '/myspace/api/auth/$': typeof MyspaceApiAuthSplatRoute
+  '/myspace/_authed/wishlists/': typeof MyspaceAuthedWishlistsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/myspace'
+    | '/myspace/login'
+    | '/'
+    | '/myspace/images/$key'
+    | '/myspace/share/$token'
+    | '/myspace/'
+    | '/myspace/wishlists/$id'
+    | '/myspace/api/auth/$'
+    | '/myspace/wishlists/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/(index)/'
+  to:
+    | '/myspace'
+    | '/myspace/login'
+    | '/'
+    | '/myspace/images/$key'
+    | '/myspace/share/$token'
+    | '/myspace/wishlists/$id'
+    | '/myspace/api/auth/$'
+    | '/myspace/wishlists'
+  id:
+    | '__root__'
+    | '/myspace'
+    | '/myspace/_authed'
+    | '/myspace/login'
+    | '/(index)/'
+    | '/myspace/images/$key'
+    | '/myspace/share/$token'
+    | '/myspace/_authed/'
+    | '/myspace/_authed/wishlists/$id'
+    | '/myspace/api/auth/$'
+    | '/myspace/_authed/wishlists/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  MyspaceRouteRoute: typeof MyspaceRouteRouteWithChildren
   indexIndexRoute: typeof indexIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/myspace': {
+      id: '/myspace'
+      path: '/myspace'
+      fullPath: '/myspace'
+      preLoaderRoute: typeof MyspaceRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/(index)/': {
       id: '/(index)/'
       path: '/'
@@ -48,10 +163,102 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof indexIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/myspace/_authed': {
+      id: '/myspace/_authed'
+      path: ''
+      fullPath: '/myspace'
+      preLoaderRoute: typeof MyspaceAuthedRouteRouteImport
+      parentRoute: typeof MyspaceRouteRoute
+    }
+    '/myspace/login': {
+      id: '/myspace/login'
+      path: '/login'
+      fullPath: '/myspace/login'
+      preLoaderRoute: typeof MyspaceLoginRouteImport
+      parentRoute: typeof MyspaceRouteRoute
+    }
+    '/myspace/_authed/': {
+      id: '/myspace/_authed/'
+      path: '/'
+      fullPath: '/myspace/'
+      preLoaderRoute: typeof MyspaceAuthedIndexRouteImport
+      parentRoute: typeof MyspaceAuthedRouteRoute
+    }
+    '/myspace/images/$key': {
+      id: '/myspace/images/$key'
+      path: '/images/$key'
+      fullPath: '/myspace/images/$key'
+      preLoaderRoute: typeof MyspaceImagesKeyRouteImport
+      parentRoute: typeof MyspaceRouteRoute
+    }
+    '/myspace/share/$token': {
+      id: '/myspace/share/$token'
+      path: '/share/$token'
+      fullPath: '/myspace/share/$token'
+      preLoaderRoute: typeof MyspaceShareTokenRouteImport
+      parentRoute: typeof MyspaceRouteRoute
+    }
+    '/myspace/_authed/wishlists/': {
+      id: '/myspace/_authed/wishlists/'
+      path: '/wishlists'
+      fullPath: '/myspace/wishlists/'
+      preLoaderRoute: typeof MyspaceAuthedWishlistsIndexRouteImport
+      parentRoute: typeof MyspaceAuthedRouteRoute
+    }
+    '/myspace/_authed/wishlists/$id': {
+      id: '/myspace/_authed/wishlists/$id'
+      path: '/wishlists/$id'
+      fullPath: '/myspace/wishlists/$id'
+      preLoaderRoute: typeof MyspaceAuthedWishlistsIdRouteImport
+      parentRoute: typeof MyspaceAuthedRouteRoute
+    }
+    '/myspace/api/auth/$': {
+      id: '/myspace/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/myspace/api/auth/$'
+      preLoaderRoute: typeof MyspaceApiAuthSplatRouteImport
+      parentRoute: typeof MyspaceRouteRoute
+    }
   }
 }
 
+interface MyspaceAuthedRouteRouteChildren {
+  MyspaceAuthedIndexRoute: typeof MyspaceAuthedIndexRoute
+  MyspaceAuthedWishlistsIdRoute: typeof MyspaceAuthedWishlistsIdRoute
+  MyspaceAuthedWishlistsIndexRoute: typeof MyspaceAuthedWishlistsIndexRoute
+}
+
+const MyspaceAuthedRouteRouteChildren: MyspaceAuthedRouteRouteChildren = {
+  MyspaceAuthedIndexRoute: MyspaceAuthedIndexRoute,
+  MyspaceAuthedWishlistsIdRoute: MyspaceAuthedWishlistsIdRoute,
+  MyspaceAuthedWishlistsIndexRoute: MyspaceAuthedWishlistsIndexRoute,
+}
+
+const MyspaceAuthedRouteRouteWithChildren =
+  MyspaceAuthedRouteRoute._addFileChildren(MyspaceAuthedRouteRouteChildren)
+
+interface MyspaceRouteRouteChildren {
+  MyspaceAuthedRouteRoute: typeof MyspaceAuthedRouteRouteWithChildren
+  MyspaceLoginRoute: typeof MyspaceLoginRoute
+  MyspaceImagesKeyRoute: typeof MyspaceImagesKeyRoute
+  MyspaceShareTokenRoute: typeof MyspaceShareTokenRoute
+  MyspaceApiAuthSplatRoute: typeof MyspaceApiAuthSplatRoute
+}
+
+const MyspaceRouteRouteChildren: MyspaceRouteRouteChildren = {
+  MyspaceAuthedRouteRoute: MyspaceAuthedRouteRouteWithChildren,
+  MyspaceLoginRoute: MyspaceLoginRoute,
+  MyspaceImagesKeyRoute: MyspaceImagesKeyRoute,
+  MyspaceShareTokenRoute: MyspaceShareTokenRoute,
+  MyspaceApiAuthSplatRoute: MyspaceApiAuthSplatRoute,
+}
+
+const MyspaceRouteRouteWithChildren = MyspaceRouteRoute._addFileChildren(
+  MyspaceRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
+  MyspaceRouteRoute: MyspaceRouteRouteWithChildren,
   indexIndexRoute: indexIndexRoute,
 }
 export const routeTree = rootRouteImport
@@ -59,10 +266,11 @@ export const routeTree = rootRouteImport
   ._addFileTypes<FileRouteTypes>()
 
 import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
+import type { startInstance } from './start.ts'
 declare module '@tanstack/react-start' {
   interface Register {
     ssr: true
     router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
   }
 }

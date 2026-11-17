@@ -8,5 +8,17 @@
     "main": "@tanstack/react-start/server-entry",
     "observability": {
         "enabled": true
-    }
+    },
+    "vars": {
+        // Passkeys are bound to this origin. Overridden in .dev.vars for local dev.
+        "MYSPACE_ORIGIN": "https://tychoverstraete.be"
+    },
+    "ratelimits": [
+        {
+            // Passkey sign-in / registration attempts per IP.
+            "name": "MYSPACE_RATE_LIMITER",
+            "namespace_id": "1001",
+            "simple": { "limit": 10, "period": 60 }
+        }
+    ]
 }
